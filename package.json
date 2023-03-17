@@ -1,0 +1,19 @@
+{
+  "name": "jogovelha",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/AdsJogoVelha/JogoVelha.git"
+  },
+  "author": "ADS_students",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AdsJogoVelha/JogoVelha/issues"
+  },
+  "homepage": "https://github.com/AdsJogoVelha/JogoVelha#readme"
+}
