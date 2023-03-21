@@ -10,6 +10,9 @@ var bodyParser = require('body-parser');
 /* importar o módulo do express-validator */
 var expressValidator = require('express-validator');
 
+/* importar o módulo do express-session */
+var expressSession = require('express-session');
+
 /* iniciar o objeto do express */
 var app = express();
 
@@ -20,6 +23,15 @@ app.set('views', './app/views');
 /* configurar o middleware express.static */
 app.use(express.static('./app/public'));
 
+app.use(expressSession({
+    secret: '2C44-4D44-WppQ38S',
+    resave: true,
+    saveUninitialized: true
+}));
+
+/* configurar o middleware body-parser */
+app.use(bodyParser.urlencoded({extended: true}));
+
 /*configurar o middleware express-validator */
 app.use(expressValidator());
 
@@ -27,6 +39,7 @@ app.use(expressValidator());
 consign()
     .include('app/route')
     .then('app/models')
+    .then('config/dbConnection.js')
     .then('app/controllers')
     .into(app)
 

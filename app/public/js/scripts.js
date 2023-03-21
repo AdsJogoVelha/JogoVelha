@@ -93,6 +93,11 @@ function checkWinCondition(){
     let b7 = document.getElementById("block-7");
     let b8 = document.getElementById("block-8");
     let b9 = document.getElementById("block-9");
+    let NomePlayer = document.getElementById("x-scoreboard");
+
+   
+
+    
 
     //horizontal - primeira linha
     if(b1.childNodes.length > 0 && b2.childNodes.length > 0 && b3.childNodes.length > 0){
@@ -105,6 +110,7 @@ function checkWinCondition(){
             // X
 
             declareWinner('x');
+            
         } else if (b1Child == 'o' && b2Child == 'o' && b3Child == 'o') {
             // O
             declareWinner('o');
@@ -120,6 +126,7 @@ function checkWinCondition(){
 
         if(b4Child == 'x' && b5Child == 'x' && b6Child == 'x'){
             // X
+            alert("Vencedor foi o => " + player1.textContent) ;
             declareWinner('x');
         } else if (b4Child == 'o' && b5Child == 'o' && b6Child == 'o') {
             // O
@@ -136,6 +143,7 @@ function checkWinCondition(){
 
         if(b7Child == 'x' && b8Child == 'x' && b9Child == 'x'){
             // X
+            alert("Vencedor foi o => " + player1.textContent) ;
             declareWinner('x');
         } else if (b7Child == 'o' && b8Child == 'o' && b9Child == 'o') {
             // O
@@ -153,6 +161,7 @@ function checkWinCondition(){
         if(b1Child == 'x' && b4Child == 'x' && b7Child == 'x'){
             // X
             declareWinner('x');
+            alert("Vencedor foi o => " + player1.textContent) ;
         } else if (b1Child == 'o' && b4Child == 'o' && b7Child == 'o') {
             // O
             declareWinner('o');
@@ -168,6 +177,7 @@ function checkWinCondition(){
 
         if(b2Child == 'x' && b5Child == 'x' && b8Child == 'x'){
             // X
+            alert("Vencedor foi o => " + player1.textContent) ;
             declareWinner('x');
         } else if (b2Child == 'o' && b5Child == 'o' && b8Child == 'o') {
             // O
@@ -184,6 +194,7 @@ function checkWinCondition(){
 
         if(b3Child == 'x' && b6Child == 'x' && b9Child == 'x'){
             // X
+            alert("Vencedor foi o => " + player1.textContent) ;
             declareWinner('x');
         } else if (b3Child == 'o' && b6Child == 'o' && b9Child == 'o') {
             // O
@@ -200,6 +211,7 @@ function checkWinCondition(){
 
         if(b3Child == 'x' && b5Child == 'x' && b7Child == 'x'){
             // X
+            alert("Vencedor foi o => " + player1.textContent) ;
             declareWinner('x');
         } else if (b3Child == 'o' && b5Child == 'o' && b7Child == 'o') {
             // O
@@ -245,10 +257,14 @@ function checkWinCondition(){
 
     if(winner == 'x'){
         scoreboardX.textContent = parseInt(scoreboardX.textContent) + 1;
-        msg = "O jogador 1 venceu!";
+        msg = NomePlayer.textContent +" venceu a partida!";
+        window.location = '/playerOneWins';
+
     } else if (winner = 'o'){
         scoreboardY.textContent = parseInt(scoreboardY.textContent) + 1;
         msg = "O jogador 2 venceu!";
+        
+
     } else {
         msg = "Deu velha!";
     }
