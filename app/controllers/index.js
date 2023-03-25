@@ -24,12 +24,9 @@ module.exports.validacao = function(app,req, res){
     //verificando se o apelido do usuário já não está cadastrado
  connection.query('select * from usuarios where nome = ?', dadosForm.apelido, function(err, result) {
  
-     console.log("Resultado do select: ");
-     console.log(result);
-     console.log("============================================");
-     console.log("Quantidade de registro: " + result.length);
+
      
-     if(parseFloat(result.length) > 0) {
+     if(result > 0) {
    
         res.render('index', {
             erro: {msg: "Er"}
